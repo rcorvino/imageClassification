@@ -17,3 +17,21 @@ Since we used transfer learning and we froze all the imported layers except the 
 
 Finally, to handle input data, we used keras' ImageDataGenerator, which allows for **data augmentation**.
 
+## Get the code 
+```
+git clone https://github.com/rcorvino/imageClassification.git
+```
+
+## Run the docker image 
+
+The docker image is on dockerHub
+
+```
+docker pull rosildecorvino/imageclassifier
+docker run --name imgclsfy -it rosildecorvino/imageclassifier python imageClassification.py
+docker cp <your-path-to-validation-folder> imgclsfy:/root/validation
+docker start -ai imgclsfy
+```
+
+
+

@@ -27,7 +27,9 @@ import matplotlib.image as mpimg
 from sklearn.metrics import accuracy_score
 import os
 import glob
-from pathlib import Path
+import argparse
+
+
 
 def getLabel(predictions):
     m = np.argmax(predictions)
@@ -44,6 +46,7 @@ def read_model(model_name_json):
     """loads a json file and creates a model from it"""
     file_exists = False
     model = Model()
+    print(model_name_json)
     if os.path.exists(model_name_json):
         json_file = open(model_name_json, 'r')
         loaded_model_json = json_file.read()
@@ -324,7 +327,16 @@ def explore():
             base_model.compile_and_fit()
 
 def main():
-    if 0:
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-x', action='store_true', help="possible models exploration")
+    parser.add_argument('-v', action='store_true', help="possible models evaluation and selection of the most promising")
+    args = parser.parse_args()
+
+
+    if args.x:
+        explore()
+    if args.v:
         datagen = ImageDataGenerator(horizontal_flip=True, vertical_flip=True,brightness_range=[0.2,1.0])
         en = ensemble()
         en.readall()
