@@ -11,7 +11,7 @@ This is a tool based on deep learning and classifing input images in 4 categorie
 **Keras** library is used to rapidly explore design possibilities.
 
 Due to the reduced number of available input images, training a deep NN is ineffective. To improve the accuracy results, we use **transfer learning**. We try out three well known architectures: VGG16, ResNet50 and InceptionV3.
-We also evaluated the **ensembling** of multiple architectures - three of the most promising among the explored cases.
+We also evaluated the **ensembling** of multiple architectures - three of the most promising among the explored ones.
 
 Since we used transfer learning and we froze all the imported layers except the last one, the **hyperparameter space exploration** was limited to the only last layer's regularization parameter.
 

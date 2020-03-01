@@ -1,0 +1,3 @@
+models/modified_vgg160.001.json
+models/modified_resnet500.001.json
+models/modified_resnet500.05.json
